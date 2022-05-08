@@ -1,1 +1,2 @@
-# kanata-no-astra-game
+#kanata-no-astra
+ 

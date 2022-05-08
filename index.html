@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/game.css">
+  <title>Kanata no Astra | Game</title>
+</head>
+<body>
+  <header class="game-title">
+    <div class="brand-container">
+      <img class="header__brand" src="./assets/kanata-no-astra-game-logo.png" alt="">
+    </div>
+  </header>
+  <section class="game-over-screen">
+    <h2>Game Over</h2>
+    <button class="restart">Restart</button>
+  </section>
+  <div id="universe" class="universe"></div>
+  <div class="ship-profile">
+    <div class="ship-components">
+      <div class="ship-component">
+        <h2>Fuel</h2>
+        <div class="fuel">
+          <div class="fuel-indicator"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scoreboard">
+      <div>Lightyears travelled: <span class="score"></span></div>
+    </div>
+  </div>
+  <audio src="./assets/music/Lost in Distant Space [ASTRA LOST IN SPACE ORIGINAL SOUND TRACK].mp3" autoplay loop></audio>
+  <script src="./js/engine.js"></script>
+  <script src="./js/score.js"></script>
+  <script src="./js/controls.js"></script>
+  <script src="./js/render_stage.js"></script>
+  <script src="./js/render_spaceship.js"></script>
+  <script src="./js/render_celestial_bodies.js"></script>
+  <script src="./js/collide.js"></script>
+  <script src="./js/game.js"></script>
+  <script src="./js/fuel.js"></script>
+</body>
+</html>

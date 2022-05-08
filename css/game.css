@@ -1,0 +1,293 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #09090e;
+	font-family: "Press Start 2P";
+}
+
+.universe {
+	background-image: url(../assets/stage-bg.png);
+	background-size: contain;
+	background-repeat: repeat;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.brand-container {
+	width: 100%;
+	max-width: 540px;
+	margin: 50px auto;
+}
+
+.header__brand {
+	max-width: 100%;
+	display: block;
+}
+
+.tile {
+	color: #fff;
+	font-size: 8px;
+	/* border: 1px solid #fff; */
+	height: 20px;
+	width: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 4px;
+}
+
+.astra.movingEast {
+	transform: rotate(90deg) translate(-11px, 10px);
+}
+
+.astra.movingWest {
+	transform: rotate(-90deg) translate(11px, -10px);
+}
+
+.astra.movingNorth {
+	transform: rotate(0deg) translate(-11px, -11px);
+}
+
+.astra.movingSouth {
+	transform: rotate(-180deg) translate(11px, 10px);
+}
+
+.planet {
+	position: absolute;
+	transform: translate(-24px, -21px);
+}
+
+.dissipating.summonedNorth {
+	animation-name: dissipatingNorth;
+	animation-duration: 1s;
+	transform: translate(-27px, -12px) scale(1);
+}
+
+.dissipating.summonedSouth {
+	animation-name: dissipatingSouth;
+	animation-duration: 1s;
+	transform: translate(-27px, -12px) scale(1);
+}
+
+.dissipating.summonedEast {
+	animation-name: dissipatingEast;
+	animation-duration: 1s;
+	transform: rotate(-90deg) translate(16px, -18px);
+}
+
+.dissipating.summonedWest {
+	animation-name: dissipatingWest;
+	animation-duration: 1s;
+}
+
+.wormhole {
+	position: absolute;
+	transform: translate(-27px, -12px);
+}
+
+.wormhole.summonedEast {
+	transform-origin: center;
+	transform: rotate(-90deg) translate(16px, -18px);
+}
+
+.wormhole.summonedWest {
+	transform-origin: center;
+	transform: rotate(90deg) translate(-15px, 26px);
+}
+
+.astra.warping.movingEast {
+	animation-name: warpingEast;
+	animation-duration: 2s;
+}
+
+.astra.warping.movingWest {
+	animation-name: warpingWest;
+	animation-duration: 2s;
+}
+
+.astra.warping.movingNorth {
+	animation-name: warpingNorth;
+	animation-duration: 2s;
+}
+
+.astra.warping.movingSouth {
+	animation-name: warpingSouth;
+	animation-duration: 2s;
+}
+
+.astra {
+	position: absolute;
+	transform: translate(-11px, -11px);
+	width: 40px;
+	z-index: 99;
+}
+
+.ship-profile {
+	color: #e6e8e6;
+	font-family: "Press Start 2P";
+	padding: 8px;
+}
+
+.ship-component {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 32px;
+}
+
+.ship-component h2 {
+	font-size: 14px;
+	margin-right: 14px;
+}
+
+.fuel {
+	width: 204px;
+	height: 20px;
+	border: 2px solid #e6e8e6;
+	position: relative;
+}
+
+.fuel-indicator {
+	background-color: #90e0ef;
+	width: 100%;
+	height: 100%;
+}
+
+.scoreboard {
+	text-align: center;
+}
+
+.scoreboard h2 {
+	font-size: 14px;
+}
+
+.game-over-screen {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: #09090e;
+	color: #e6e8e6;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	display: none;
+}
+
+.game-over-screen h2 {
+	margin-bottom: 16px;
+}
+
+.game-over-screen button {
+	padding: 8px 24px;
+	font-size: 14px;
+	font-family: "Press Start 2P";
+	background-color: #e6e8e6;
+	border: unset;
+	outline: none;
+	box-shadow: inset 0px -8px 0px -3px #5a5a5a;
+	cursor: pointer;
+}
+
+.game-over-screen button:active {
+	box-shadow: inset 0px -6px 0px -3px #5a5a5a;
+}
+
+@keyframes warpingEast {
+	0% {
+		transform: scale(1) rotate(90deg) translate(-11px, 10px);
+	}
+
+	50% {
+		transform: scale(1.2) rotate(90deg) translate(-11px, 10px);
+	}
+
+	100% {
+		transform: scale(0) rotate(90deg) translate(-11px, 10px);
+	}
+}
+
+@keyframes warpingWest {
+	0% {
+		transform: scale(1) rotate(-90deg) translate(11px, -10px);
+	}
+
+	50% {
+		transform: scale(1.2) rotate(-90deg) translate(11px, -10px);
+	}
+	100% {
+		transform: scale(0) rotate(-90deg) translate(11px, -10px);
+	}
+}
+
+@keyframes warpingNorth {
+	0% {
+		transform: scale(1) rotate(0deg) translate(-11px, -11px);
+	}
+
+	50% {
+		transform: scale(1.2) rotate(0deg) translate(-11px, -11px);
+	}
+	100% {
+		transform: scale(0) rotate(0deg) translate(-11px, -11px);
+	}
+}
+
+@keyframes warpingSouth {
+	0% {
+		transform: scale(1) rotate(-180deg) translate(11px, 10px);
+	}
+
+	50% {
+		transform: scale(1.2) rotate(-180deg) translate(11px, 10px);
+	}
+	100% {
+		transform: scale(0) rotate(-180deg) translate(11px, 10px);
+	}
+}
+
+@keyframes dissipatingNorth {
+	0% {
+		transform: translate(-27px, -12px) scale(1) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-27px, -12px) scale(0) rotate(0deg);
+	}
+}
+
+@keyframes dissipatingSouth {
+	0% {
+		transform: translate(-27px, -12px) scale(1) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-27px, -12px) scale(0) rotate(0deg);
+	}
+}
+
+@keyframes dissipatingEast {
+	0% {
+		transform: rotate(-90deg) translate(16px, -18px) scale(1);
+	}
+
+	100% {
+		transform: rotate(-90deg) translate(16px, -18px) scale(0);
+	}
+}
+
+@keyframes dissipatingWest {
+	0% {
+		transform: rotate(90deg) translate(-15px, 26px) scale(1);
+	}
+
+	100% {
+		transform: rotate(90deg) translate(-15px, 26px) scale(0);
+	}
+}
